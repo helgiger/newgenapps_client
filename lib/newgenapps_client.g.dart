@@ -110,7 +110,7 @@ class _NewgenappsClient implements NewgenappsClient {
     )
         .compose(
           _dio.options,
-          '/run/${runId}',
+          '/run?run_id=${runId}',
           queryParameters: queryParameters,
           data: _data,
         )

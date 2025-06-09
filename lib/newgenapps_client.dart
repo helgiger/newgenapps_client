@@ -66,7 +66,7 @@ abstract class NewgenappsClient {
     @Body() required RunData data,
   });
 
-  @GET('/run/{runId}')
+  @GET('/run?run_id={runId}')
   Future<RunOutputResult> getRun({
     @Path('runId') required String runId,
   });
