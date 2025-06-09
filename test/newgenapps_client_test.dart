@@ -1,16 +1,16 @@
 import 'dart:io';
 
-import 'package:comfy_deploy_client/comfy_deploy_client.dart';
-import 'package:comfy_deploy_client/types.dart';
+import 'package:newgenapps_client/newgenapps_client.dart';
+import 'package:newgenapps_client/types.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:comfy_deploy_client/types_extensions.dart';
+import 'package:newgenapps_client/types_extensions.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   const apiKey = 'api_key';
-  final client = ComfyDeployClient(apiKey: apiKey);
+  final client = NewgenappsClient(apiKey: apiKey, appName: '');
 
   final file = File('assets/images/IMG_2287.JPG');
 

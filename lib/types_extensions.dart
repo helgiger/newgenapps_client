@@ -1,4 +1,4 @@
-import 'package:comfy_deploy_client/types.dart';
+import 'package:newgenapps_client/types.dart';
 
 extension TypesExtensions on RunOutputResult {
   String? findOutputImageUrl() {
