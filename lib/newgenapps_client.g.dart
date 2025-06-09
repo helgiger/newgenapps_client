@@ -77,7 +77,7 @@ class _NewgenappsClient implements NewgenappsClient {
     )
         .compose(
           _dio.options,
-          '/run/deployment/queue',
+          '/run',
           queryParameters: queryParameters,
           data: _data,
         )
