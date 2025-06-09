@@ -61,7 +61,7 @@ abstract class NewgenappsClient {
     @Query('file_size') int? fileSize,
   });
 
-  @POST('/run/deployment/queue')
+  @POST('/run')
   Future<RunResult> postRun({
     @Body() required RunData data,
   });
