@@ -8,7 +8,7 @@ import 'package:logger/logger.dart';
 
 part 'newgenapps_client.g.dart';
 
-@RestApi(baseUrl: 'http://newgenapps.space:8081/comfy')
+@RestApi(baseUrl: 'https://newgenapps.space:8443/comfy')
 abstract class NewgenappsClient {
   static final Logger _logger = Logger(
     printer: PrettyPrinter(
