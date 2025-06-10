@@ -14,7 +14,7 @@ class _NewgenappsClient implements NewgenappsClient {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'http://newgenapps.space:8081/comfy';
+    baseUrl ??= 'https://newgenapps.space:8443/comfy';
   }
 
   final Dio _dio;
