@@ -125,3 +125,31 @@ class WebsocketResult with _$WebsocketResult {
   factory WebsocketResult.fromJson(Map<String, dynamic> json) =>
       _$WebsocketResultFromJson(json);
 }
+
+@JsonSerializable()
+class PublicUploadUrlResult {
+  @JsonKey(name: 'download_url')
+  final String downloadUrl;
+
+  @JsonKey(name: 'file_id')
+  final String fileId;
+
+  @JsonKey(name: 'upload_url')
+  final String uploadUrl;
+
+  const PublicUploadUrlResult({
+    required this.downloadUrl,
+    required this.fileId,
+    required this.uploadUrl,
+  });
+
+  factory PublicUploadUrlResult.fromJson(Map<String, dynamic> json) =>
+      _$PublicUploadUrlResultFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PublicUploadUrlResultToJson(this);
+
+  @override
+  String toString() {
+    return 'PublicUploadUrlResult(downloadUrl: $downloadUrl, fileId: $fileId, uploadUrl: $uploadUrl)';
+  }
+}

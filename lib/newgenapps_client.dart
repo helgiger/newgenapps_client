@@ -17,6 +17,7 @@ abstract class NewgenappsClient {
       colors: true,
     ),
   );
+
   factory NewgenappsClient({
     required String apiKey,
     required String appName,
@@ -57,6 +58,13 @@ abstract class NewgenappsClient {
 
   @GET('/upload-url')
   Future<UploadUrlResult> getUploadUrl({
+    @Query('type') String? type,
+    @Query('file_size') int? fileSize,
+  });
+
+  // Новый метод для получения публичного URL загрузки
+  @GET('/upload/public-url')
+  Future<PublicUploadUrlResult> getPublicUploadUrl({
     @Query('type') String? type,
     @Query('file_size') int? fileSize,
   });

@@ -64,6 +64,46 @@ class _NewgenappsClient implements NewgenappsClient {
   }
 
   @override
+  Future<PublicUploadUrlResult> getPublicUploadUrl({
+    String? type,
+    int? fileSize,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'type': type,
+      r'file_size': fileSize,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<PublicUploadUrlResult>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/upload/public-url',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late PublicUploadUrlResult _value;
+    try {
+      _value = PublicUploadUrlResult.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<RunResult> postRun({required RunData data}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

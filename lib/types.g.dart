@@ -6,6 +6,22 @@ part of 'types.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+PublicUploadUrlResult _$PublicUploadUrlResultFromJson(
+        Map<String, dynamic> json) =>
+    PublicUploadUrlResult(
+      downloadUrl: json['download_url'] as String,
+      fileId: json['file_id'] as String,
+      uploadUrl: json['upload_url'] as String,
+    );
+
+Map<String, dynamic> _$PublicUploadUrlResultToJson(
+        PublicUploadUrlResult instance) =>
+    <String, dynamic>{
+      'download_url': instance.downloadUrl,
+      'file_id': instance.fileId,
+      'upload_url': instance.uploadUrl,
+    };
+
 _$RunDataImpl _$$RunDataImplFromJson(Map<String, dynamic> json) =>
     _$RunDataImpl(
       deploymentId: json['deployment_id'] as String,
